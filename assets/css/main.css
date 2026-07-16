@@ -235,9 +235,9 @@ li,
 }
 @font-face {
   font-family: "MangoGrotesque";
-  src: url("https://chesterochieng.com/assets/fonts/MangoGrotesque-Bold.eot");
+  src: url("https://chesochieng.com/assets/fonts/MangoGrotesque-Bold.eot");
   src:
-    url("https://chesterochieng.com/assets/fonts/MangoGrotesque-Bold.eot?")
+    url("https://chesochieng.com/assets/fonts/MangoGrotesque-Bold.eot?")
       format("embedded-opentype"),
     url("../fonts/MangoGrotesque-Bold.woff") format("woff"),
     url("../fonts/MangoGrotesque-Bold.woff2") format("woff2"),
@@ -248,9 +248,9 @@ li,
 }
 @font-face {
   font-family: "MangoGrotesqueLight";
-  src: url("https://chesterochieng.com/assets/fonts/MangoGrotesque-Light.eot");
+  src: url("https://chesochieng.com/assets/fonts/MangoGrotesque-Light.eot");
   src:
-    url("https://chesterochieng.com/assets/fonts/MangoGrotesque-Light.eot?")
+    url("https://chesochieng.com/assets/fonts/MangoGrotesque-Light.eot?")
       format("embedded-opentype"),
     url("../fonts/MangoGrotesque-Light.woff") format("woff"),
     url("../fonts/MangoGrotesque-Light.woff2") format("woff2"),
@@ -261,9 +261,9 @@ li,
 }
 @font-face {
   font-family: "MangoGrotesqueMed";
-  src: url("https://chesterochieng.com/assets/fonts/MangoGrotesque-Medium.eot");
+  src: url("https://chesochieng.com/assets/fonts/MangoGrotesque-Medium.eot");
   src:
-    url("https://chesterochieng.com/assets/fonts/MangoGrotesque-Medium.eot?")
+    url("https://chesochieng.com/assets/fonts/MangoGrotesque-Medium.eot?")
       format("embedded-opentype"),
     url("../fonts/MangoGrotesque-Medium.woff") format("woff"),
     url("../fonts/MangoGrotesque-Medium.woff2") format("woff2"),
@@ -274,9 +274,9 @@ li,
 }
 @font-face {
   font-family: "MangoGrotesqueSemBd";
-  src: url("https://chesterochieng.com/assets/fonts/MangoGrotesque-SemiBold.eot");
+  src: url("https://chesochieng.com/assets/fonts/MangoGrotesque-SemiBold.eot");
   src:
-    url("https://chesterochieng.com/assets/fonts/MangoGrotesque-SemiBold.eot?")
+    url("https://chesochieng.com/assets/fonts/MangoGrotesque-SemiBold.eot?")
       format("embedded-opentype"),
     url("../fonts/MangoGrotesque-SemiBold.woff") format("woff"),
     url("../fonts/MangoGrotesque-SemiBold.woff2") format("woff2"),
@@ -287,9 +287,9 @@ li,
 }
 @font-face {
   font-family: "MangoGrotesque";
-  src: url("https://chesterochieng.com/assets/fonts/MangoGrotesque-Regular.eot");
+  src: url("https://chesochieng.com/assets/fonts/MangoGrotesque-Regular.eot");
   src:
-    url("https://chesterochieng.com/assets/fonts/MangoGrotesque-Regular.eot?")
+    url("https://chesochieng.com/assets/fonts/MangoGrotesque-Regular.eot?")
       format("embedded-opentype"),
     url("../fonts/MangoGrotesque-Regular.woff") format("woff"),
     url("../fonts/MangoGrotesque-Regular.woff2") format("woff2"),
@@ -300,9 +300,9 @@ li,
 }
 @font-face {
   font-family: "MangoGrotesqueThin";
-  src: url("https://chesterochieng.com/assets/fonts/MangoGrotesque-Thin.eot");
+  src: url("https://chesochieng.com/assets/fonts/MangoGrotesque-Thin.eot");
   src:
-    url("https://chesterochieng.com/assets/fonts/MangoGrotesque-Thin.eot?")
+    url("https://chesochieng.com/assets/fonts/MangoGrotesque-Thin.eot?")
       format("embedded-opentype"),
     url("../fonts/MangoGrotesque-Thin.woff") format("woff"),
     url("../fonts/MangoGrotesque-Thin.woff2") format("woff2"),
@@ -8399,7 +8399,7 @@ body.tp-magic-cursor #magic-cursor {
 }
 .postbox-details-remeber label::before {
   position: absolute;
-  content: url("https://chesterochieng.com/assets/img/svg/check.svg");
+  content: url("https://chesochieng.com/assets/img/svg/check.svg");
   top: -2px;
   left: 2px;
   width: 16px;
@@ -40538,7 +40538,7 @@ body.tp-magic-cursor #magic-cursor {
 }
 .tp-product-details-msg ul li::after {
   position: absolute;
-  content: url("https://chesterochieng.com/assets/img/product/product-details-main/product-icon.svg");
+  content: url("https://chesochieng.com/assets/img/product/product-details-main/product-icon.svg");
   top: 4px;
   left: 0;
   width: 18px;
@@ -40999,7 +40999,7 @@ body.tp-magic-cursor #magic-cursor {
 }
 .tp-product-details-review-remeber label::before {
   position: absolute;
-  content: url("https://chesterochieng.com/assets/img/product/product-details-main/check.svg");
+  content: url("https://chesochieng.com/assets/img/product/product-details-main/check.svg");
   top: 4px;
   left: 0;
   width: 18px;
@@ -41627,7 +41627,7 @@ body.tp-magic-cursor #magic-cursor {
 }
 .tp-login-remeber label::before {
   position: absolute;
-  content: url("https://chesterochieng.com/assets/img/login/check.svg");
+  content: url("https://chesochieng.com/assets/img/login/check.svg");
   top: 4px;
   left: 0;
   width: 18px;
@@ -41853,7 +41853,7 @@ body.tp-magic-cursor #magic-cursor {
 }
 .tp-checkout-option label::before {
   position: absolute;
-  content: url("https://chesterochieng.com/assets/img/login/check.svg");
+  content: url("https://chesochieng.com/assets/img/login/check.svg");
   top: 4px;
   left: 0;
   width: 18px;
@@ -42100,7 +42100,7 @@ body.tp-magic-cursor #magic-cursor {
 }
 .tp-return-customer-remeber label::before {
   position: absolute;
-  content: url("https://chesterochieng.com/assets/img/login/check.svg");
+  content: url("https://chesochieng.com/assets/img/login/check.svg");
   top: 4px;
   left: 0;
   width: 18px;
@@ -42127,7 +42127,7 @@ body.tp-magic-cursor #magic-cursor {
 }
 .tp-return-customer-forgot a::after {
   position: absolute;
-  content: url("https://chesterochieng.com/assets/img/login/check.svg");
+  content: url("https://chesochieng.com/assets/img/login/check.svg");
   left: auto;
   right: 0;
   bottom: 4px;
