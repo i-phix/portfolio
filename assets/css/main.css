@@ -3456,7 +3456,7 @@ input[type="color"] {
   font-size: 18px;
   line-height: 1;
   display: inline-block;
-  text-transform: uppercase;
+  text-transform: lowercase;
   color: var(--tp-common-black);
 }
 .tp-section-subtitle.pre::before {
