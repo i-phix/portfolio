@@ -634,6 +634,9 @@ button:focus {
 .capitalize {
   text-transform: capitalize;
 }
+.tolowercase {
+  text-transform: lowercase;
+}
 
 input[type="text"],
 input[type="email"],
