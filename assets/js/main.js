@@ -1754,6 +1754,13 @@
 
 		$this.on('click', function () {
 			$this.toggleClass('active');
+
+			var selected = $('.tp-contact-category-btn.active')
+				.map(function () { return $(this).text().trim(); })
+				.get()
+				.join(', ');
+
+			$('#interest-field').val(selected);
 		});
 	})
 
