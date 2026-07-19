@@ -10,40 +10,46 @@ $(function () {
     // Stop the browser from submitting the form.
     e.preventDefault();
 
-    // Serialize the form data.
-    var formData = $(form).serialize();
+    var recipient = $(form).data("recipient");
+    var name = $.trim($(form).find("[name='name']").val());
+    var email = $.trim($(form).find("[name='email']").val());
+    var website = $.trim($(form).find("[name='subject']").val());
+    var message = $.trim($(form).find("[name='message']").val());
 
-    // Submit the form using AJAX.
-    $.ajax({
-      type: "POST",
-      url: $(form).attr("action"),
-      data: formData,
-    })
-      .done(function (response) {
-        // Make sure that the formMessages div has the 'success' class.
-        $(formMessages).removeClass("error");
-        $(formMessages).addClass("success");
-        $(formMessages).text(response);
+    if (!name || !email || !message) {
+      $(formMessages).removeClass("success").addClass("error");
+      $(formMessages).text("Please fill in your name, email, and message.");
+      return;
+    }
 
-        // Set the message text.
-        $(formMessages).text(response);
+    var subject = "New inquiry from " + name;
+    var bodyLines = [
+      "Name: " + name,
+      "Email: " + email,
+      website ? "Website link: " + website : null,
+      "",
+      message,
+    ].filter(function (line) {
+      return line !== null;
+    });
 
-        // Clear the form.
-        $("#contact-form input,#contact-form textarea").val("");
-      })
-      .fail(function (data) {
-        // Make sure that the formMessages div has the 'error' class.
-        $(formMessages).removeClass("success");
-        $(formMessages).addClass("error");
+    var mailtoUrl =
+      "mailto:" +
+      encodeURIComponent(recipient) +
+      "?subject=" +
+      encodeURIComponent(subject) +
+      "&body=" +
+      encodeURIComponent(bodyLines.join("\n"));
 
-        // Set the message text.
-        if (data.responseText !== "") {
-          $(formMessages).text(data.responseText);
-        } else {
-          $(formMessages).text(
-            "Oops! An error occured and your message could not be sent.",
-          );
-        }
-      });
+    // Open the visitor's email client with the message pre-filled.
+    window.location.href = mailtoUrl;
+
+    $(formMessages).removeClass("error").addClass("success");
+    $(formMessages).text(
+      "Opening your email client to send this message to " + recipient + "...",
+    );
+
+    // Clear the form.
+    $("#contact-form input,#contact-form textarea").val("");
   });
 });
