@@ -535,7 +535,11 @@
                     </h3>
 
                     <div class="tp-contact-me-interest-form-wrap">
-                      <form id="contact-form">
+                      <form
+                        id="contact-form"
+                        action="https://api.web3forms.com/submit"
+                        method="POST"
+                      >
                         <input
                           type="hidden"
                           name="access_key"
@@ -545,6 +549,11 @@
                           type="hidden"
                           name="subject"
                           value="New Contact Form Submission"
+                        />
+                        <input
+                          type="hidden"
+                          name="redirect"
+                          value="https://chesochieng.com/contact.html?sent=1"
                         />
                         <input
                           type="checkbox"
