@@ -1,55 +1,44 @@
 $(function () {
   // Get the form.
-  var form = $("#contact-form");
+  var form = $("#contact-form")[0];
+  if (!form) return;
 
   // Get the messages div.
   var formMessages = $(".ajax-response");
+  var submitBtn = $(form).find('button[type="submit"]');
+  var submitBtnText = submitBtn.find(".text-1");
 
-  // Set up an event listener for the contact form.
-  $(form).on("submit", function (e) {
-    // Stop the browser from submitting the form.
+  $(form).on("submit", async function (e) {
     e.preventDefault();
 
-    var recipient = $(form).data("recipient");
-    var name = $.trim($(form).find("[name='name']").val());
-    var email = $.trim($(form).find("[name='email']").val());
-    var website = $.trim($(form).find("[name='subject']").val());
-    var message = $.trim($(form).find("[name='message']").val());
+    var originalText = submitBtnText.text();
+    submitBtnText.text("Sending...");
+    submitBtn.prop("disabled", true);
 
-    if (!name || !email || !message) {
-      $(formMessages).removeClass("success").addClass("error");
-      $(formMessages).text("Please fill in your name, email, and message.");
-      return;
+    var formData = new FormData(form);
+
+    try {
+      var response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: formData,
+      });
+      var data = await response.json();
+
+      if (response.ok && data.success) {
+        formMessages.removeClass("error").addClass("success");
+        formMessages.text("Success! Your message has been sent.");
+        form.reset();
+      } else {
+        formMessages.removeClass("success").addClass("error");
+        formMessages.text(data.message || "Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      formMessages.removeClass("success").addClass("error");
+      formMessages.text("Something went wrong. Please try again.");
+    } finally {
+      submitBtnText.text(originalText);
+      submitBtn.prop("disabled", false);
     }
-
-    var subject = "New inquiry from " + name;
-    var bodyLines = [
-      "Name: " + name,
-      "Email: " + email,
-      website ? "Website link: " + website : null,
-      "",
-      message,
-    ].filter(function (line) {
-      return line !== null;
-    });
-
-    var mailtoUrl =
-      "mailto:" +
-      encodeURIComponent(recipient) +
-      "?subject=" +
-      encodeURIComponent(subject) +
-      "&body=" +
-      encodeURIComponent(bodyLines.join("\n"));
-
-    // Open the visitor's email client with the message pre-filled.
-    window.location.href = mailtoUrl;
-
-    $(formMessages).removeClass("error").addClass("success");
-    $(formMessages).text(
-      "Opening your email client to send this message to " + recipient + "...",
-    );
-
-    // Clear the form.
-    $("#contact-form input,#contact-form textarea").val("");
   });
 });
