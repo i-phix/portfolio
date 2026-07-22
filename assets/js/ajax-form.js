@@ -65,4 +65,33 @@ $(function () {
       submitBtn.prop("disabled", false);
     }
   });
+
+  // WhatsApp button: reach out directly, pre-filled with whatever's in the
+  // form so far. Works even if the form is empty ("just reaching out").
+  var WHATSAPP_NUMBER = "254791216791";
+  $("#whatsapp-btn").on("click", function (e) {
+    e.preventDefault();
+
+    var name = $.trim($(form).find("[name='name']").val());
+    var email = $.trim($(form).find("[name='email']").val());
+    var website = $.trim($(form).find("[name='website']").val());
+    var interest = $.trim($(form).find("[name='interest']").val());
+    var message = $.trim($(form).find("[name='message']").val());
+
+    var lines = [
+      "Hi, I'd like to get in touch.",
+      "",
+      name ? "Name: " + name : null,
+      email ? "Email: " + email : null,
+      website ? "Website link: " + website : null,
+      interest ? "Interested in: " + interest : null,
+      message ? "\n" + message : null,
+    ].filter(function (line) {
+      return line !== null;
+    });
+
+    var text = lines.join("\n");
+    var url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(text);
+    window.open(url, "_blank", "noopener");
+  });
 });

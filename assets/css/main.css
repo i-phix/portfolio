@@ -37049,6 +37049,59 @@ body.tp-magic-cursor #magic-cursor {
   background-color: #fff669;
   color: var(--tp-common-black-7);
 }
+.tp-contact-form-btn a.tp-whatsapp-btn {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+  border-radius: 30px;
+  padding: 20px 40px;
+  letter-spacing: -0.18px;
+  color: #fff;
+  background-color: #25d366;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+.tp-contact-form-btn a.tp-whatsapp-btn:hover {
+  background-color: #1ebe5b;
+  color: #fff;
+}
+.tp-contact-form-btn a.tp-whatsapp-btn span {
+  position: relative;
+  z-index: 1;
+  line-height: 1;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+}
+.tp-contact-form-btn a.tp-whatsapp-btn span span.text-1 {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  transition: 0.3s;
+}
+.tp-contact-form-btn a.tp-whatsapp-btn span span.text-2 {
+  position: absolute;
+  top: 100%;
+  display: inline-flex;
+  align-items: center;
+  transition: 0.3s;
+}
+.tp-contact-form-btn a.tp-whatsapp-btn:hover span span.text-1 {
+  transform: translateY(-150%);
+}
+.tp-contact-form-btn a.tp-whatsapp-btn:hover span span.text-2 {
+  top: 50%;
+  transform: translateY(-50%);
+}
+@media (max-width: 575px) {
+  .tp-contact-form-btn a.tp-whatsapp-btn,
+  .tp-contact-form-btn button {
+    width: 100%;
+  }
+}
 
 /*----------------------------------------*/
 /*  9.9 Portfolio css
